@@ -16,6 +16,8 @@ Connect to nodes over SSH or through plugging it into a monitor (Repeat the foll
 sudo systemctl --now enable sshd # start and enable SSH on reboot
 ```
 
+Check whether you are on Raspbian v10 . ``lsb_release -a``
+
 For each pi, upgrade it and install vim
 
 ```
@@ -32,7 +34,9 @@ And add this line to it
 
 ```arm_64bit=1```
 
-Then run ``sudo rpi-update``.
+Then run ``sudo systemctl reboot``.
+
+Once you are sshed back into the pi run ``uname -a``. If it outputs aarch64 then you are running the 64 bit kernel.
 
 
 Make sure the hostname of the pi is "node" followed by a number of your choice. For simplicity, we have node1, node2, node3 and node0 (master).
@@ -115,3 +119,11 @@ We'll see the cluster on the home page (woohoo) with "4 nodes" writen besides it
 - Click on the cluster and "Applications + Add". We'll spin up multiple (data won't be shared across nodes/containers so we'll probs have to setup a central volume) Global instance of whatever app we want to test whether redundancy works (like a website for instance or online VSCode thing - we can decide with Marcus then). Select reasonabe CPU/memory amounts and container port. Click start.
 
 Hope it is working so far. Now with this the possibilities for us are endless. YOU pick what you want to do!
+
+<h3>References</h3> 
+
+
+1. https://www.raspberrypi.com/products/raspberry-pi-4-model-b/
+2. https://kubernetes.io/docs/home/
+3. https://en.wikipedia.org/wiki/Kubernetes
+4. https://github.com/k3s-io/k3s

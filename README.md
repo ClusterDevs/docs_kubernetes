@@ -1,6 +1,9 @@
 <h2> Building a cost-effective Kubernetes cluster - (Krish and Marcus) </h2>
 <h3>Notes for students that help us</h3>
 
+Update: Due to Network restrictions we are switching to use popcorn for the most part. Thus, this document is going to be archived as for the most part we aren't going to use Kubernetes and are instead creating a https://en.wikipedia.org/wiki/Single_system_image 
+
+
 What we need:
 - A laptop (serving as the master node), preferably running OSX or Linux
 - Multiple single board computers (we are using Raspberry Pi's running Raspbian Linux since it is optimised for the pis themselves)
